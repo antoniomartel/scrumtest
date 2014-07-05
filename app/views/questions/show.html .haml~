@@ -1,0 +1,16 @@
+-#  This file is app/views/questions/index.html.haml
+%h2 All Questions
+
+%table#questions
+  %thead
+    %tr
+      %th Question Title
+      %th value
+      %th Order
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.title 
+        %td= question.value
+        %td= question.order
+

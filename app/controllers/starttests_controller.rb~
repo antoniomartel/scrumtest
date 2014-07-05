@@ -1,0 +1,7 @@
+# This file is app/controllers/starttests_controller.rb
+class StarttestsController < ApplicationController
+  def index
+    session[:points] = points + 4
+
+  end
+end

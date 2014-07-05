@@ -1,0 +1,6 @@
+# This file is app/controllers/results_controller.rb
+class PagesController < ApplicationController
+  def starttest
+ 
+  end
+end

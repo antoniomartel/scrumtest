@@ -1,0 +1,33 @@
+-#  This file is app/views/questions/index.html.haml
+%h2 All Questions
+
+%table#questions
+  %thead
+    %tr
+      %th Question Id
+      %th Question Title
+      %th Value
+      %th Order
+      %th Answer
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.id
+        %td= question.title 
+        %td= question.value
+        %td= question.order
+        - question.answers.each do |answer|
+          %td= answer.text
+
+
+
+-# search_movies=Movie.all(:limit=>times_to_run)
+-#    search_goers=Moviegoer.all(:limit=>times_to_run)
+-#    case benchType
+
+-#     when "movies"
+-#       start_time=Time.now
+-#       search_movies.each do |bench_movie|
+-#          reviews = bench_movie.reviews
+-#          reviews.each {|r| r}
+-#       end

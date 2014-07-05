@@ -1,0 +1,10 @@
+# This file is app/controllers/pages_controller.rb
+class PagesController < ApplicationController
+  def starttext
+    render
+  end
+
+  def results
+    render
+  end
+end
