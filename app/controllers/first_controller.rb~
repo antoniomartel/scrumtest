@@ -1,0 +1,6 @@
+# This file is app/controllers/questions_controller.rb
+class FirstController < ApplicationController
+  def index
+    @questions = Question.all
+  end
+end

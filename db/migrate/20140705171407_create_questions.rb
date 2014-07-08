@@ -1,10 +1,9 @@
-class CreateAnswers < ActiveRecord::Migration
+class CreateQuestions < ActiveRecord::Migration
   def up
-    create_table :answers do |t|
-      t.string :text
-      t.boolean :right
+    create_table :questions do |t|
+      t.string :title
+      t.string :value
       t.string :order
-      t.string :question_id
       # Add fields that let Rails automatically keep track
       # of when movies are added or modified:
       t.timestamps
@@ -12,6 +11,6 @@ class CreateAnswers < ActiveRecord::Migration
   end
 
   def down
-    drop_table :answers
+    drop_table :questions
   end
 end

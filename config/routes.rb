@@ -6,6 +6,8 @@ Scrumtest::Application.routes.draw do
     end
   end
 
+  resources :first 
+
   resources :answers
 
   match '/starttest' => 'pages#starttest'

@@ -1,21 +1,15 @@
 -#  This file is app/views/questions/show.html.haml
-%h2 Test de Scrum de www.antoniomartel.com
-%h3 Pregunta: #{@question.title}
 
-%ul#details
-  %li
-    Valor:
-    = @question.value
-  %li
-    Orden:
-    = @question.order
+%h2 Test de Scrum de www.antoniomartel.com
+%br
+%h3 #{@question.title}
 
 = form_tag next_question_path, :method => :get, :action => :next, :id => 'answers_form' do
   %h3 Escoja una respuesta:
   %ul#answers
     - @question.answers.each do |answer|
       = radio_button_tag "answers_radio", "#{answer.id}"
-      #{answer.text} #{answer.right}
+      #{answer.text}
       %br
   = link_to 'Volver a comenzar el test', starttest_path
   %sp 

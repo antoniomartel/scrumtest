@@ -5,7 +5,7 @@
 
 %p Puede encontrar más información en español sobre cómo pasar el test en el blog en mi blog #{link_to "www.antoniomartel.com", "http://www.antoniomartel.com/2013/04/certificacion-professional-scrum-master.html"}
 
-= button_to 'Comenzar el test', first_index_path(0), :method => :get
+= button_to 'Comenzar el test', question_path(0), :method => :get
 
 %p Buena suerte!
 %br

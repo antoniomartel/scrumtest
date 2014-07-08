@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+  # encoding: UTF-8
 
   Question.delete_all
   Answer.delete_all
@@ -6,14 +6,54 @@
   Question.send(:attr_accessible, :title, :value, :order)
   Answer.send(:attr_accessible, :text, :right, :order)
 
-  question1 = Question.create(:title => 'Question 1', :value => '1', :order => '1')
-  question1.answers.create(:text => 'Answer 1', :right => '1', :order => '1')
-  question1.answers.create(:text => 'Answer 2', :right => '0', :order => '2')
-  question1.answers.create(:text => 'Answer 3', :right => '0', :order => '3')
+  question1 = Question.create(:title => 'El equipo Scrum consiste en:', :value => '1', :order => '1')
+  question1.answers.create(:text => 'Un Jefe de proyecto, un Scrum Master y un Equipo de Desarrollo', :right => '0', :order => '1')
+  question1.answers.create(:text => 'Un Dueño del producto, un Scrum Master y un Equipo de desarrollo', :right => '1', :order => '2')
+  question1.answers.create(:text => 'Un Jefe de proyecto, un Dueño del producto y un Equipo de desarrollo', :right => '0', :order => '3')
 
-  question2 = Question.create(:title => 'Question 2', :value => '1', :order => '2')
-  question2.answers.create(:text => 'Answer 4', :right => '1', :order => '1')
-  question2.answers.create(:text => 'Answer 5', :right => '0', :order => '2')
-  question2.answers.create(:text => 'Answer 6', :right => '0', :order => '3')
+  question2 = Question.create(:title => 'Los equipos Scrum son:', :value => '1', :order => '2')
+  question2.answers.create(:text => 'Autoorganizados y disciplinados', :right => '0', :order => '1')
+  question2.answers.create(:text => 'Disciplinados y multifuncionales', :right => '0', :order => '2')
+  question2.answers.create(:text => 'Autoorganizados y multifuncionales', :right => '1', :order => '3')
+
+  question3 = Question.create(:title => 'El Dueño del producto es:', :value => '1', :order => '3')
+  question3.answers.create(:text => 'La persona encargada de resolver las dificultades del Equipo de desarrollo', :right => '0', :order => '1')
+  question3.answers.create(:text => 'La persona responsable de coordinar al Equipo de desarrollo', :right => '0', :order => '2')
+  question3.answers.create(:text => 'La persona responsable de gestionar la Lista del Producto (Product backlog)', :right => '1', :order => '3')
+
+  question4 = Question.create(:title => 'Que el Equipo de desarrollo sea multifuncional significa que:', :value => '1', :order => '4')
+  question4.answers.create(:text => 'Cada miembro del equipo debe saber hacer de todo en el trabajo diario', :right => '0', :order => '1')
+  question4.answers.create(:text => 'El Equipo en su conjunto cuenta con todas las habilidades necesarias para entregar un incremento del trabajo', :right => '1', :order => '2')
+  question4.answers.create(:text => 'Cada miembro del Equipo puede trabajar en más de un proyecto a la vez con una función distinta en cada uno', :right => '0', :order => '3')
+
+  question5 = Question.create(:title => 'El tamaño del Equipo de desarrollo', :value => '1', :order => '5')
+  question5.answers.create(:text => 'Puede ser tan grande como sea necesario', :right => '0', :order => '1')
+  question5.answers.create(:text => 'Es lo suficientemente pequeño para ser ágil y lo suficientemente grande como para completar una cantidad de trabajo significativa', :right => '1', :order => '2')
+  question5.answers.create(:text => 'No debe ser más grande del número de historias en la Pila del Producto (Product backlog)', :right => '0', :order => '3')
+
+  question6 = Question.create(:title => 'El Scrum Master es', :value => '1', :order => '6')
+  question6.answers.create(:text => 'El equivalente al tradicional jefe de proyectos', :right => '0', :order => '1')
+  question6.answers.create(:text => 'El Scrum Master es la persona responsable de gestionar la Lista del Producto (Product backlog)', :right => '0', :order => '2')
+  question6.answers.create(:text => 'Un líder al servicio del Equipo Scrum', :right => '1', :order => '3')
+
+  question7 = Question.create(:title => 'La duración de los Sprints', :value => '1', :order => '7')
+  question7.answers.create(:text => 'Dependerá del tamaño de elementos en la Pila del Sprint (Sprint backlog)', :right => '0', :order => '1')
+  question7.answers.create(:text => 'Puede variar entre 1 y 3 meses', :right => '0', :order => '2')
+  question7.answers.create(:text => 'Es más conveniente si la duración de los Sprints es consistente a lo largo del desarrollo', :right => '1', :order => '3')
+
+  question8 = Question.create(:title => '¿Qué puede ser terminado en este Sprint?', :value => '1', :order => '8')
+  question8.answers.create(:text => 'El número de elementos de la Lista de Producto seleccionados por el Sprint depende únicamente del Equipo de desarrollo', :right => '1', :order => '1')
+  question8.answers.create(:text => 'El Dueño del producto y el Scrum Master deciden qué elementos de la Pila del producto se realizarán durante el Sprint', :right => '0', :order => '2')
+  question8.answers.create(:text => 'El Scrum Master decide cuál es el objetivo del Sprint y lo traslada al Equipo de desarrollo', :right => '0', :order => '3')
+
+  question9 = Question.create(:title => 'El Scrum Diario (Daily Scrum) es', :value => '1', :order => '9')
+  question9.answers.create(:text => 'Una reunión de 15 minutos para que el Equipo sincronice sus actividades y cree un plan para las siguientes 24 horas', :right => '1', :order => '1')
+  question9.answers.create(:text => 'La lista de procesos y reuniones que deben incorporarse a la rutina diaria de un Equipo Scrum', :right => '0', :order => '2')
+  question9.answers.create(:text => 'La reunión en la que el Scrum Master comunica al Equipo de desarrollo las actividades a realizar durante las próximas 24 horas', :right => '0', :order => '3')
+
+  question10 = Question.create(:title => 'El seguimiento del progreso del Sprint', :value => '1', :order => '10')
+  question10.answers.create(:text => 'Se resolverá mediante un tablero Kanban y diagramas de Gantt', :right => '0', :order => '1')
+  question10.answers.create(:text => 'En cualquier momento durante un Sprint, es posible sumar el trabajo restante en los elementos de la Pila del Sprint para gestionar su progreso', :right => '1', :order => '2')
+  question10.answers.create(:text => 'Es responsabilidad del Dueño del producto y del Scrum Master', :right => '0', :order => '3')
 
 

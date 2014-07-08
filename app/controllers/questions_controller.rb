@@ -6,9 +6,8 @@ class QuestionsController < ApplicationController
 
   def show
     id = params[:id] # retrieve question ID from URI route
-
+    
     @question = Question.find(id) # look up question by unique ID
-    # will render app/views/question/show.<extension> by default
   end
 
   def next 
@@ -28,8 +27,8 @@ class QuestionsController < ApplicationController
  
     session[:points] = points
 
-    next_one = 1 + question.order.to_i
-    if next_one <= Question.count 
+    next_one = 1 + question.id.to_i
+    if next_one <= Question.first.id + Question.count - 1
       @question = Question.find(next_one)
       redirect_to question_path(@question)
     else
