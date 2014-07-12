@@ -1,6 +1,6 @@
 -#  This file is app/views/questions/show.html.haml
 
-%h2 Test de Scrum de www.antoniomartel.com
+%h2 El no-oficial Test de Scrum
 %br
 %h3 #{@question.title}
 
@@ -9,6 +9,7 @@
   %ul#answers
     - @question.answers.each do |answer|
       = radio_button_tag "answers_radio", "#{answer.id}"
+      #{answer.text}
       %br
   = link_to 'Volver a comenzar el test', starttest_path
   %sp 
@@ -16,5 +17,5 @@
 
 %br
 %br
-%p © Antonio Martel
+%p © {link_to "www.antoniomartel.com", "http://www.antoniomartel.com"}
 
