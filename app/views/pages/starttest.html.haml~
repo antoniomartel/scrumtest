@@ -3,7 +3,7 @@
 
 %p Test de conocimientos sobre Scrum en español. Este es un test de preparación para la certificación Professional Scrum Master (PSM I) de scrum.org. Si obtiene más del 80% de las preguntas correctas usted tiene un conocimiento alto de Scrum. Pruebe el test oficial en #{link_to "Professional Scrum Master (PSM I)", "https://www.scrum.org/Assessments/Open-Assessments/Scrum-Open-Assessment"}
 
-%p Puede encontrar más información en español sobre cómo pasar el test en mi blog #{link_to "www.antoniomartel.com", "http://www.antoniomartel.com/2013/04/certificacion-professional-scrum-master.html"}
+%p Puede encontrar más información en español sobre cómo preparar y pasar el test en mi libro #{link_to "Gestión práctica de proyectos con Scrum", "http://www.amazon.com/Gestión-práctica-proyectos-con-Scrum-ebook/dp/B00KDYSRLC"}
 
 = button_to 'Comenzar el test', first_index_path(0), :method => :get
 
@@ -18,4 +18,3 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-52777345-1', 'auto');
   ga('send', 'pageview');
-</script>

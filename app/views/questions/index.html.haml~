@@ -18,16 +18,3 @@
         %td= question.order
         - question.answers.each do |answer|
           %td= answer.text
-
-
-
--# search_movies=Movie.all(:limit=>times_to_run)
--#    search_goers=Moviegoer.all(:limit=>times_to_run)
--#    case benchType
-
--#     when "movies"
--#       start_time=Time.now
--#       search_movies.each do |bench_movie|
--#          reviews = bench_movie.reviews
--#          reviews.each {|r| r}
--#       end

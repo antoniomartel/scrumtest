@@ -5,13 +5,19 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    id = params[:id] # retrieve question ID from URI route
+    seq = params[:id].to_i # retrieve question sequence number
+    rands = session[:rands]
+
+    puts seq
+    puts rands[seq]
     
-    @question = Question.find(id) # look up question by unique ID
+    @question = Question.find(rands[seq]) # look up question by unique ID
   end
 
   def next 
-    question = Question.find params[:id]
+    seq = params[:id].to_i # retrieve question sequence number
+    rands = session[:rands]
+    question = Question.find(rands[seq]) # look up question by unique ID
 
     points = session[:points].to_i
     if points == nil then 
@@ -27,10 +33,10 @@ class QuestionsController < ApplicationController
  
     session[:points] = points
 
-    next_one = 1 + question.id.to_i
-    if next_one <= Question.first.id + Question.count - 1
-      @question = Question.find(next_one)
-      redirect_to question_path(@question)
+    next_one = seq + 1
+  
+    if next_one < rands.count
+      redirect_to question_path(next_one)
     else
       redirect_to results_path
     end

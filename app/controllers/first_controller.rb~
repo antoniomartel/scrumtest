@@ -2,5 +2,32 @@
 class FirstController < ApplicationController
   def index
     @questions = Question.all
+    @rands = Array.new
+
+    i = 0
+    @questions.each do |q|
+      @rands[i] = q.id.to_i
+      i = i + 1
+    end
+
+    puts @rands
+
+    session[:rands] = @rands
+  
+    #@rands = Hash.new
+
+    #for i in 0..10
+#      start_index = Question.first.id
+ #     end_index = Question.last.id
+ #     value = (start_index..end_index).to_a.sample
+      
+  #    @rands[i.to_s] = value
+  #  end
+
+   # puts @rands
+
+    #session[:rands] = @rands
+
+    redirect_to question_path(0)
   end
 end
