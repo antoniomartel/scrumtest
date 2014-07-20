@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
 
     next_one = seq + 1
   
-    if next_one < rands.count
+    if next_one < 10
       redirect_to question_path(next_one)
     else
       redirect_to results_path

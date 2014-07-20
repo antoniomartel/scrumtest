@@ -6,7 +6,7 @@
   Question.send(:attr_accessible, :title, :value, :order)
   Answer.send(:attr_accessible, :text, :right, :order)
 
-  question1 = Question.create(:title => 'El equipo Scrum consisten en:', :value => '1', :order => '1')
+  question1 = Question.create(:title => 'El equipo Scrum consiste en:', :value => '1', :order => '1')
   question1.answers.create(:text => 'Un Jefe de proyecto, un Scrum Master y un Equipo de Desarrollo', :right => '0', :order => '1')
   question1.answers.create(:text => 'Un Dueño del producto, un Scrum Master y un Equipo de desarrollo', :right => '1', :order => '2')
   question1.answers.create(:text => 'Un Jefe de proyecto, un Dueño del producto y un Equipo de desarrollo', :right => '0', :order => '3')
