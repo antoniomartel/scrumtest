@@ -7,9 +7,6 @@ class QuestionsController < ApplicationController
   def show
     seq = params[:id].to_i # retrieve question sequence number
     rands = session[:rands]
-
-    puts seq
-    puts rands[seq]
     
     @question = Question.find(rands[seq]) # look up question by unique ID
   end
@@ -35,7 +32,7 @@ class QuestionsController < ApplicationController
 
     next_one = seq + 1
   
-    if next_one < 10
+    if next_one < Question.max_questions
       redirect_to question_path(next_one)
     else
       redirect_to results_path

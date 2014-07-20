@@ -10,9 +10,7 @@ class FirstController < ApplicationController
       i = i + 1
     end
 
-    puts @rands
     @rands = @rands.shuffle
-    puts @rands
 
     session[:rands] = @rands
 
